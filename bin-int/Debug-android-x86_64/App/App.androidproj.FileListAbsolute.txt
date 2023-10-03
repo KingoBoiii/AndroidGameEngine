@@ -1,0 +1,7 @@
+G:\Tests\CppAndroidTest\bin\Debug-android-x86_64\App\App.apk.recipe
+G:\Tests\CppAndroidTest\bin\Debug-android-x86_64\App\App.apk.recipe.merged
+G:\Tests\CppAndroidTest\bin\Debug-android-x86_64\App\Package\Source\main.cpp
+G:\Tests\CppAndroidTest\bin\Debug-android-x86_64\App\Package\AndroidManifest.xml
+G:\Tests\CppAndroidTest\bin\Debug-android-x86_64\App\App.apk
+G:\Tests\CppAndroidTest\bin\Debug-android-x86_64\App\App.lastsuccessfuldeploy
+G:\Tests\CppAndroidTest\bin-int\Debug-android-x86_64\App\FileStringReplace.incremental
