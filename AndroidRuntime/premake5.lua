@@ -1,10 +1,18 @@
+local os = require("os")
+androidNDK = os.getenv("ANDROID_NDK_PATH");
+
+if(androidNDK == nil) then
+	print("Android NDK path has not been set in System Environment variables!")
+	os.exit()
+end
+
+print(androidNDK)
+
 project "AndroidRuntime"
 	kind "Utility"
 	language "C++"
-	cppdialect "C++17"
-	staticruntime "off"
-	--architecture "x86_64"
-	--system "android"
+	-- cppdialect "C++17"
+	-- staticruntime "off"
 
 	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}")
@@ -15,14 +23,14 @@ project "AndroidRuntime"
 	}
 
 	prebuildcommands {
-		"G:/AndroidStudio/SDK/ndk/25.1.8937393/build/ndk-build.cmd -C G:/Tests/CppAndroidTest/AndroidRuntime/Source"
+		"%{androidNDK}/build/ndk-build.cmd -C %{wks.location}/AndroidRuntime/Source"
 	}
 	
-	includedirs {
+	externalincludedirs {
 		"%{wks.location}/App/Source",
 		"%{wks.location}/Engine/Source",
-		--"G:/AndroidStudio/SDK/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include", -- only if Android Studio NDK is installed!
-		"G:/AndroidStudio/SDK/ndk/25.1.8937393/sources/android/native_app_glue"
+		"%{androidNDK}/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include",
+		"%{androidNDK}/sources/android/native_app_glue"
 	}
 
 	defines {

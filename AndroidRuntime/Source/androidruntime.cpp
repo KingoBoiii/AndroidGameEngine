@@ -6,6 +6,10 @@
 #include <EGL/egl.h>
 #include <GLES/gl.h>
 
+/* 
+*   NOTE: This file only works within Android Studio!
+*/
+
 extern "C" {
 
     struct AndroidRuntime {

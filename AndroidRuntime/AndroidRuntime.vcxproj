@@ -46,12 +46,12 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <PreBuildEvent>
-      <Command>G:/AndroidStudio/SDK/ndk/25.1.8937393/build/ndk-build.cmd -C G:/Tests/CppAndroidTest/AndroidRuntime/Source</Command>
+      <Command>G:/AndroidStudio/SDK/ndk/25.1.8937393/build/ndk-build.cmd -C $(SolutionDir)/AndroidRuntime/Source</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <PreBuildEvent>
-      <Command>G:/AndroidStudio/SDK/ndk/25.1.8937393/build/ndk-build.cmd -C G:/Tests/CppAndroidTest/AndroidRuntime/Source</Command>
+      <Command>G:/AndroidStudio/SDK/ndk/25.1.8937393/build/ndk-build.cmd -C $(SolutionDir)/AndroidRuntime/Source</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
