@@ -126,6 +126,27 @@ namespace Engine
 #endif
 	}
 
+	void Renderer::Shutdown()
+	{
+#ifdef PLATFORM_ANDROID
+		if (s_Data->Display != EGL_NO_DISPLAY)
+		{
+			eglMakeCurrent(s_Data->Display, EGL_NO_SURFACE, EGL_NO_SURFACE, EGL_NO_CONTEXT);
+			if (s_Data->Context != EGL_NO_CONTEXT)
+			{
+				eglDestroyContext(s_Data->Display, s_Data->Context);
+			}
+			if (s_Data->Surface != EGL_NO_SURFACE)
+			{
+				eglDestroySurface(s_Data->Display, s_Data->Surface);
+			}
+			eglTerminate(s_Data->Display);
+		}
+#endif
+
+		delete s_Data;
+	}
+
 	void Renderer::Clear()
 	{
 #ifdef PLATFORM_ANDROID

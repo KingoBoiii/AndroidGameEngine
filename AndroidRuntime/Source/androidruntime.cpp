@@ -15,13 +15,19 @@ extern "C" {
     void handle_cmd(android_app* app, int32_t cmd)
     {
         auto* runtime = (struct AndroidRuntime*)app->userData;
-        Engine::Lib::print("Hello World!");
+        //Engine::Lib::print("Hello World!");
 
         switch (cmd) {
             case APP_CMD_INIT_WINDOW:
                 Engine::Renderer::Initialize(app->window);
 
                 runtime->WindowInitialized = true;
+                break;
+
+            case APP_CMD_TERM_WINDOW:
+                runtime->WindowInitialized = false;
+
+                Engine::Renderer::Shutdown();
                 break;
         }
     }
