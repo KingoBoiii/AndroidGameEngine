@@ -25,6 +25,10 @@ project "AndroidRuntime"
 		"Engine"
 	}
 
+	defines {
+		"PLATFORM_ANDROID"
+	}
+
 	filter "system:windows"
 		systemversion "latest"
 

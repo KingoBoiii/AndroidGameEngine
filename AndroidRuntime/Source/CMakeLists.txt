@@ -17,6 +17,8 @@ add_library(androidruntime SHARED androidruntime.cpp)
 
 target_link_libraries(androidruntime
 	engine
-	android
 	native_app_glue
-	${log-lib})
+	android
+	${log-lib}
+	EGL
+	GLESv3)

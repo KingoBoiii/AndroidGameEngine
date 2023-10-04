@@ -15,7 +15,7 @@ project "Engine"
 	
 	includedirs {
 		"Source",
-		--"G:/AndroidStudio/SDK/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include" -- only if Android Studio NDK is installed!
+		"G:/AndroidStudio/SDK/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include" -- only if Android Studio NDK is installed!
 	}
 	
 	links {
