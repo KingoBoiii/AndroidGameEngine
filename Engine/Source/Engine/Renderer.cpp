@@ -129,19 +129,11 @@ namespace Engine
 	void Renderer::Clear()
 	{
 #ifdef PLATFORM_ANDROID
-		if (!s_Data)
-		{
-			LOGI("RendererData not initialized!");
-			return;
-		}
-
 		if (!s_Data->Display)
 		{
-			LOGI("glClear - No Display");
 			return;
 		}
 
-		LOGI("glClear");
 		glClear(GL_COLOR_BUFFER_BIT);
 #endif
 	}
@@ -149,19 +141,11 @@ namespace Engine
 	void Renderer::ClearColor(float r, float g, float b, float a)
 	{
 #ifdef PLATFORM_ANDROID
-		if (!s_Data)
-		{
-			LOGI("RendererData not initialized!");
-			return;
-		}
-
 		if (!s_Data->Display)
 		{
-			LOGI("glClearColor - No Display");
 			return;
 		}
 
-		LOGI("glClearColor");
 		glClearColor(r, g, b, a);
 #endif
 	}
@@ -169,19 +153,11 @@ namespace Engine
 	void Renderer::Present()
 	{
 #ifdef PLATFORM_ANDROID
-		if (!s_Data)
-		{
-			LOGI("RendererData not initialized!");
-			return;
-		}
-
 		if (!s_Data->Display || !s_Data->Surface)
 		{
-			LOGI("eglSwapBuffers - No Display or Surface");
 			return;
 		}
 
-		LOGI("eglSwapBuffers");
 		eglSwapBuffers(s_Data->Display, s_Data->Surface);
 #endif
 	}
