@@ -7,7 +7,7 @@ find_library(log-lib log)
 
 set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -u ANativeActivity_onCreate")
 
-set(EXTERNAL_LIBRARY_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../../Engine/Source/obj/local/${ANDROID_ABI}/libengine.so)
+set(EXTERNAL_LIBRARY_PATH ${CMAKE_CURRENT_SOURCE_DIR}/libs/${ANDROID_ABI}/libengine.so)
 
 add_library(engine SHARED IMPORTED)
 set_target_properties(engine PROPERTIES IMPORTED_LOCATION ${EXTERNAL_LIBRARY_PATH})
