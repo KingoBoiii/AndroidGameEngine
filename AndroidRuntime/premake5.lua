@@ -3,6 +3,8 @@ project "AndroidRuntime"
 	language "C++"
 	cppdialect "C++17"
 	staticruntime "off"
+	architecture "x86_64"
+	system("android")
 
 	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}")
@@ -15,7 +17,7 @@ project "AndroidRuntime"
 	includedirs {
 		"%{wks.location}/App/Source",
 		"%{wks.location}/Engine/Source",
-		"G:/AndroidStudio/SDK/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include", -- only if Android Studio NDK is installed!
+		--"G:/AndroidStudio/SDK/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include", -- only if Android Studio NDK is installed!
 		"G:/AndroidStudio/SDK/ndk/25.1.8937393/sources/android/native_app_glue"
 	}
 
